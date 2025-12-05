@@ -21,7 +21,7 @@
         h.set('Cross-Origin-Opener-Policy', 'same-origin');
         h.set('Cross-Origin-Embedder-Policy', 'require-corp');
         h.set('Cross-Origin-Resource-Policy', 'cross-origin');
-        return new Response(body, { status, statusText, headers: h });
+        return new Response(status == 204 ? null : body, { status, statusText, headers: h });
       }));
     });
   }
